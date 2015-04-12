@@ -1,0 +1,6 @@
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value\key_value\bin\Debug\key_value.exe.config
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\key_value\obj\Debug\key_value.csprojResolveAssemblyReference.cache
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\key_value\bin\Debug\key_value.exe
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\key_value\bin\Debug\key_value.pdb
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\key_value\obj\Debug\key_value.exe
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\key_value\obj\Debug\key_value.pdb

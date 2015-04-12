@@ -1,0 +1,6 @@
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\bin\Debug\Client.exe.config
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\bin\Debug\Client.exe
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\bin\Debug\Client.pdb
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\obj\Debug\Client.exe
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value\Client\obj\Debug\Client.pdb

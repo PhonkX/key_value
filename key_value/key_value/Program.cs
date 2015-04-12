@@ -101,16 +101,20 @@ namespace key_value
                 StateObject state = new StateObject();
                 state.workSocket = handler;
 
-                while (true)
-                {
+             //   while (true)
+             //   {
                     handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                       new AsyncCallback(ReadCallback), state);
-                }
+            //    }
                 /*  while (true)
                   {
                       Receive(handler);
                   }*/
             }
+            //catch (System.Net.Sockets.SocketException e)
+            //{
+            //    Console.WriteLine("Client has disconnected");
+            //}
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
@@ -148,8 +152,8 @@ namespace key_value
                 // Read data from the client socket. 
                 int bytesRead = handler.EndReceive(ar);
 
-                //   if (bytesRead > 0)
-                //   {
+                  if (bytesRead > 0)
+                   {
                 var rcvData = Encoding.ASCII.GetString(state.buffer, 0, bytesRead);
                 // There  might be more data, so store the data received so far.
                 //  state.sb.Append(rcvData);
@@ -157,8 +161,8 @@ namespace key_value
                 // Check for end-of-file tag. If it is not there, read 
                 // more data.
                 //    content = state.sb.ToString();
-                // if (content.IndexOf("<EOF>") > -1)
-                //    {
+             //    if (content.IndexOf("<EOF>") > -1)
+                 // {
                 // All the data has been read from the 
                 // client. Display it on the console.
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
@@ -169,19 +173,19 @@ namespace key_value
                 Console.WriteLine("{0}[{1}]", rcvData, data);
                 // Echo the data back to the client.
                 Send(handler, data);
-                //      }
-                //   }
-                //     else
-                //     {
+               //     }
+                  }
+            //         else
+           //          {
                 // Not all data received. Get more.
-                //        handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
-                //        new AsyncCallback(ReadCallback), state);
-                // }
+                        handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
+                        new AsyncCallback(ReadCallback), state);
+             //    }
             }
             catch (System.Net.Sockets.SocketException e)
             {
                 Console.WriteLine("Client has disconnected");
-                //  throw;
+                //        throw;
             }
             catch (Exception e)
             {

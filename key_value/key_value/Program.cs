@@ -101,11 +101,11 @@ namespace key_value
                 StateObject state = new StateObject();
                 state.workSocket = handler;
 
-             //   while (true)
-             //   {
-                    handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
-                      new AsyncCallback(ReadCallback), state);
-            //    }
+                //   while (true)
+                //   {
+                handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
+                  new AsyncCallback(ReadCallback), state);
+                //    }
                 /*  while (true)
                   {
                       Receive(handler);
@@ -152,35 +152,49 @@ namespace key_value
                 // Read data from the client socket. 
                 int bytesRead = handler.EndReceive(ar);
 
-                  if (bytesRead > 0)
-                   {
-                var rcvData = Encoding.ASCII.GetString(state.buffer, 0, bytesRead);
-                // There  might be more data, so store the data received so far.
-                //  state.sb.Append(rcvData);
+                if (bytesRead > 0)
+                {
+                    var rcvData = Encoding.ASCII.GetString(state.buffer, 0, bytesRead);
+                    // There  might be more data, so store the data received so far.
+                    //  state.sb.Append(rcvData);
 
-                // Check for end-of-file tag. If it is not there, read 
-                // more data.
-                //    content = state.sb.ToString();
-             //    if (content.IndexOf("<EOF>") > -1)
-                 // {
-                // All the data has been read from the 
-                // client. Display it on the console.
-                Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
-                    content.Length, content);
-                var data = store.Search<string, string>(rcvData);
-                if (data == default(string))
-                    data = "There is no such key.";
-                Console.WriteLine("{0}[{1}]", rcvData, data);
-                // Echo the data back to the client.
-                Send(handler, data);
-               //     }
-                  }
-            //         else
-           //          {
+                    // Check for end-of-file tag. If it is not there, read 
+                    // more data.
+                    //    content = state.sb.ToString();
+                    //    if (content.IndexOf("<EOF>") > -1)
+                    // {
+                    // All the data has been read from the 
+                    // client. Display it on the console.
+                    Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
+                        content.Length, content);
+                    var rcvDataElements = rcvData.Split(' ');
+                    if (rcvDataElements[0] == "Read")
+                    {
+                        var data = store.Search<string, string>(rcvDataElements[1]);
+                        if (data == default(string))
+                            data = "There is no such key.";
+                        Console.WriteLine("{0}[{1}]", rcvData, data);
+                        // Echo the data back to the client.
+                        Send(handler, data);
+                    }
+                    else if (rcvDataElements[0] == "Write")
+                    {
+                        store.Add<string, string>(rcvDataElements[1], rcvDataElements[2]);
+                        Send(handler, "Record's done");
+                    }
+                    else
+                    {
+                        Send(handler, "Wrong command");
+                    }
+
+                    //     }
+                }
+                //         else
+                //          {
                 // Not all data received. Get more.
-                        handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
-                        new AsyncCallback(ReadCallback), state);
-             //    }
+                handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
+                new AsyncCallback(ReadCallback), state);
+                //    }
             }
             catch (System.Net.Sockets.SocketException e)
             {

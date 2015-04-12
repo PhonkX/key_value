@@ -40,6 +40,9 @@ namespace Client
                 ipAddr = IPAddress.Parse(addr);
                 ipEP = new IPEndPoint(ipAddr, PORT);
                 clientSock = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                Console.WriteLine("Type (without pluses):");
+                Console.WriteLine("\"Read\" + key to get a value; or");
+                Console.WriteLine("\"Write\" + key + value to write new key-value pair to storage"); 
             }
             catch (Exception e)
             {
@@ -59,7 +62,6 @@ namespace Client
                 {
                     sendDone.Reset();
                     receiveDone.Reset();
-                    Console.WriteLine("Enter key");
                     string key = Console.ReadLine();
                     Send(clientSock, key);
                     sendDone.WaitOne();

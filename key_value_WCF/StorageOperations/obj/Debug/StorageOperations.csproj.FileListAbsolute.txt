@@ -1,0 +1,6 @@
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\bin\Debug\StorageOperations.exe.config
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\bin\Debug\StorageOperations.exe
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\bin\Debug\StorageOperations.pdb
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\obj\Debug\StorageOperations.csprojResolveAssemblyReference.cache
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\obj\Debug\StorageOperations.exe
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\StorageOperations\obj\Debug\StorageOperations.pdb

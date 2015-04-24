@@ -1,0 +1,8 @@
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\obj\Debug\server.csprojResolveAssemblyReference.cache
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\key_value_WCF.exe.config
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\key_value_WCF.exe
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\key_value_WCF.pdb
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\StorageOperations.exe
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\StorageOperations.pdb
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\obj\Debug\key_value_WCF.exe
+c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\obj\Debug\key_value_WCF.pdb

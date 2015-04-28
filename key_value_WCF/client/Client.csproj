@@ -51,6 +51,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\key_value_WCF\Server.csproj">
+      <Project>{f3b01dd7-2054-4ee9-bb9e-68e4146bd895}</Project>
+      <Name>Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StorageOperations\StorageOperations.csproj">
       <Project>{f0883f24-f80d-4c3f-a647-bab1c8b5d020}</Project>
       <Name>StorageOperations</Name>

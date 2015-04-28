@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace StorageOperations
 {
@@ -16,8 +17,20 @@ namespace StorageOperations
         [OperationContract]
         void AddKey(string key, string value);
 
-      //  [OperationContract]
+        [OperationContract]
 
-        //void Authotization(string login, string password);
+        bool Authorization(User user);
+    }
+    public class User
+    {
+        [XmlAttribute()]
+        public string Login { get; set; }
+
+        [XmlAttribute()]
+        public string Password { get; set; }
+
+    }
+    public class UserList : List<User>
+    {
     }
 }

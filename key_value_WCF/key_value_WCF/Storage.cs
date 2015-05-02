@@ -7,6 +7,7 @@ using System.Collections;
 using StorageOperations;
 using System.Xml.Serialization;
 using System.IO;
+using Sop.Collections.Generic.BTree;
 
 
 namespace key_value_WCF
@@ -15,22 +16,46 @@ namespace key_value_WCF
     {
         
         private static Hashtable ht = new Hashtable();
+       // private static BTreeDictionary<string, string> bt = new BTreeDictionary<string, string>();
         public static string GetValue(string key)
         {
-            lock (ht)
+            try
             {
-                if (ht.Contains(key))
-                    return (string)ht[key];
-                else
-                    return default(string);
+                lock (ht)
+                {
+                    if (ht.Contains(key))
+                        return (string)ht[key];
+                    else
+                        return "";
+                }
+                //lock (bt)
+                //{
+                //    if (bt.Search(key))
+                //        return (string)bt[key];
+                //    else
+                //        return "";
+                //}
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine("Wrong key.");
+                return "";
             }
             
         }
         public static void AddKey(string key, string value)
         {
-            lock (ht)
+            try
             {
-                ht.Add(key, value);
+                lock (ht)
+                {
+                    ht.Add(key, value);
+                   // bt.Add(key, value);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Wrong key/value.");
             }
         }
     }

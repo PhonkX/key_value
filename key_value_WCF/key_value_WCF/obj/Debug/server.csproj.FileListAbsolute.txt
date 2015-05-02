@@ -6,3 +6,5 @@ c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WC
 c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\StorageOperations.pdb
 c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\obj\Debug\key_value_WCF.exe
 c:\users\phonkx\documents\visual studio 2013\Projects\key_value_WCF\key_value_WCF\obj\Debug\key_value_WCF.pdb
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\Sop.dll
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\key_value_WCF\bin\Debug\Sop.pdb

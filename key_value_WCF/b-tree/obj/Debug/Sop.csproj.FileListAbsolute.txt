@@ -1,0 +1,7 @@
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\bin\Debug\Sop.dll
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\bin\Debug\Sop.pdb
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\obj\Debug\Sop.csprojResolveAssemblyReference.cache
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\obj\Debug\Sop.Collections.BTree.BTreeResources.resources
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\obj\Debug\Sop.csproj.GenerateResource.Cache
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\obj\Debug\Sop.dll
+C:\Users\PhonkX\Documents\Visual Studio 2013\Projects\key_value_WCF\b-tree\obj\Debug\Sop.pdb

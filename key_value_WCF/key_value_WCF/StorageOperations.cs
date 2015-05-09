@@ -20,7 +20,7 @@ namespace key_value_WCF
         {
             if(Authorized)
                 return Storage.GetValue(key);
-            return "You are not authorized";
+            return "";
         }
         public void AddKey(string key, string value)
         {
@@ -48,15 +48,25 @@ namespace key_value_WCF
             return false;
 
         }
+
+        public void SaveToXml()
+        {
+            Storage.SaveToXml();
+        }
+
+        public void Remove(string key)
+        {
+            Storage.Remove(key);
+        }
         private UserList GetUserList()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(UserList));
-            using (var fileStream = new FileStream("db.xml", FileMode.Open))
+            using (var fileStream = new FileStream("users.xml", FileMode.Open))
             {
                 var userList = serializer.Deserialize(fileStream) as UserList;
                 return userList;
             }
         }
-   
+
     }
 }

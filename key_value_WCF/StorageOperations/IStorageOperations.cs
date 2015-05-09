@@ -20,6 +20,15 @@ namespace StorageOperations
         [OperationContract]
 
         bool Authorization(User user);
+
+        //[OperationContract]
+
+        //void SaveToXml();
+
+        [OperationContract]
+
+        void Remove(string key);
+
     }
     public class User
     {

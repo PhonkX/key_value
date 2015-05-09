@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <User Login="PhonkX" Password="ololo" />
-  <User Login="asar" Password="2sdf" />
-  <User Login="Vasya2" Password="3" />
-  <User Login="Vasya4" Password="4" />
-</ArrayOfUser>
+<ArrayOfDataItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataItem>
+    <Key>ololo</Key>
+    <Value>sdsd</Value>
+  </DataItem>
+</ArrayOfDataItem>

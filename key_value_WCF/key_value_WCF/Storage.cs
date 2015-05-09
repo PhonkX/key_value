@@ -8,15 +8,30 @@ using StorageOperations;
 using System.Xml.Serialization;
 using System.IO;
 using Sop.Collections.Generic.BTree;
-
+using System.Xml;
+using System.Runtime.Serialization;
 
 namespace key_value_WCF
 {
+    public class DataItem
+    {
+        public string Key;
+
+        public string Value;
+
+        public DataItem(string key, string value)
+        {
+            Key = key.ToString();
+            Value = value.ToString();
+        }
+        public DataItem() { }
+    }
     class Storage
     {
         
-        private static Hashtable ht = new Hashtable();
+         private static Hashtable ht = new Hashtable();
        // private static BTreeDictionary<string, string> bt = new BTreeDictionary<string, string>();
+
         public static string GetValue(string key)
         {
             try
@@ -43,7 +58,7 @@ namespace key_value_WCF
             }
             
         }
-        public static void AddKey(string key, string value)
+        public static void AddKey (string key, string value)
         {
             try
             {
@@ -56,6 +71,45 @@ namespace key_value_WCF
             catch (Exception e)
             {
                 Console.WriteLine("Wrong key/value.");
+            }
+        }
+
+        public static void SaveToXml()
+        {
+            try
+            {
+                lock (ht)
+                {
+                    List<DataItem> tempdataitems = new List<DataItem>(ht.Count);
+
+                    foreach (string key in ht.Keys)
+                    {
+                        tempdataitems.Add(new DataItem(key, ht[key].ToString()));
+                    }
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<DataItem>));
+                    var fileStream = new FileStream("db.xml", FileMode.Create);
+                    serializer.Serialize(fileStream, tempdataitems);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+
+        public static void Remove(string key)
+        {
+            try
+            {
+                lock(ht)
+                {
+                    ht.Remove(key);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Wrong key.");
             }
         }
     }
